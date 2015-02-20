@@ -1,7 +1,14 @@
-## Put comments here that give an overall description of what your
-## functions do
+#' Matrix cache functions
 
-## Write a short comment describing this function
+#' My first attempt to use standard R documentation
+#' @describeIn makeCacheMatrix Construct a special matrix that caches it's inverse
+#' @param x A matrix
+#' @return list of functions
+# 
+# Description: Construct a special matrix that caches the inverse
+#     matrix.  Assumes that the input (x) is a square matrix.
+#     Return a list of functions defined within the makeCacheMatrix
+#     environment a la Lexical Scoping
 
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
@@ -16,10 +23,16 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+#' @describeIn cacheSolve Return an inverse matrix constructed
+#'  from makeCacheMatrix()
+#' @param x The inverse matrix constructed from makeCacheMatrix
+#' @return The inverse matrix
+#
+# Description: Return an inverse matrix.  If a inverse was
+#     calculated already, return the cached matrix.
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+    ## Return a matrix that is the inverse of 'x'
     inv <- x$getinv()
     if (!is.null(inv)) {
         message("getting cached inverse")
