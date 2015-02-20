@@ -9,6 +9,9 @@
 #     matrix.  Assumes that the input (x) is a square matrix.
 #     Return a list of functions defined within the makeCacheMatrix
 #     environment a la Lexical Scoping
+#
+#     Note, if the set() function is called to change the stored
+#     matrix, the cached inverse will be cleared
 
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
